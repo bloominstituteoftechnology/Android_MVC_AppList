@@ -3,7 +3,9 @@ package com.example.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AppDetailsActivity extends AppCompatActivity {
+import java.io.Serializable;
+
+public class AppDetailsActivity extends AppCompatActivity implements Serializable {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

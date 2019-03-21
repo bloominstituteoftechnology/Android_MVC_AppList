@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -23,7 +24,11 @@ public class AppListView extends AppCompatActivity {
 
         appListings = AppRepository.getAppListings();
 
-        //generateTextView();
+        for(AppListing list: appListings){
+            Log.i("test", "enchanced for loop");
+            generateTextView(list);
+        }
+
     }
 
     public void generateTextView(final AppListing appListing) {

@@ -12,7 +12,7 @@ public class AppRepository {
         public static ArrayList<AppListing> getAppListings(){
             dataSet = new ArrayList<>(500);
             ParseRawData(dataSet, APP_DATA_1);
-            ParseRawData(dataSet, APP_DATA_2);
+            //ParseRawData(dataSet, APP_DATA_2);
 
             return dataSet;
         }
@@ -21,7 +21,7 @@ public class AppRepository {
             final String[] lines = dataString.split("\n");
             final String[][] dataValues = new String[lines.length][];
             for (int i = 1; i < lines.length; ++i){
-                dataValues[i] = lines[i].split(",");
+                dataValues[i] = lines[i-1].split(",");
                 dataModels.add(new AppListing(
                         Integer.parseInt(dataValues[i][0]),
                         dataValues[i][1],
@@ -35,7 +35,7 @@ public class AppRepository {
         }
 
 
-    private static final String APP_DATA_1 = "\n" +
+    private static final String APP_DATA_1 =
 
             "1,Tresom,0.18,php.net,bboick0@bravesites.com,http://dummyimage.com/169x140.jpg/dddddd/000000\n" +
             "2,Cookley,0.86,cbslocal.com,jkobierra1@webs.com,http://dummyimage.com/131x216.bmp/cc0000/ffffff\n" +
