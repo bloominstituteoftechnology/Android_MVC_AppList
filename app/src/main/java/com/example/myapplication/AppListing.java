@@ -11,6 +11,15 @@ public class AppListing {
     private String contactEmail;
     private String imageURL;
 
+    public AppListing(int id, String appName, String appVersion, String domainName, String contactEmail, String imageURL) {
+        this.id = id;
+        this.appName = appName;
+        this.appVersion = appVersion;
+        this.domainName = domainName;
+        this.contactEmail = contactEmail;
+        this.imageURL = imageURL;
+    }
+
     public int getId() {
         return id;
     }

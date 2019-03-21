@@ -1,13 +1,42 @@
 package com.example.myapplication;
 
+import android.widget.ArrayAdapter;
+
 import java.util.ArrayList;
 
 public class AppRepository {
 
-        
+    private static ArrayList<AppListing> dataSet;
+
+
+        public static ArrayList<AppListing> getAppListings(){
+            dataSet = new ArrayList<>(500);
+            ParseRawData(dataSet, APP_DATA_1);
+            ParseRawData(dataSet, APP_DATA_2);
+
+            return dataSet;
+        }
+
+        private static void ParseRawData(ArrayList<AppListing> dataModels, String dataString){
+            final String[] lines = dataString.split("\n");
+            final String[][] dataValues = new String[lines.length][];
+            for (int i = 1; i < lines.length; ++i){
+                dataValues[i] = lines[i].split(",");
+                dataModels.add(new AppListing(
+                        Integer.parseInt(dataValues[i][0]),
+                        dataValues[i][1],
+                        dataValues[i][2],
+                        dataValues[i][3],
+                        dataValues[i][4],
+                        dataValues[i][5]));
+                //"id,app_name,app_version,domain_name,contact_email,image_url\n"
+            }
+
+        }
+
 
     private static final String APP_DATA_1 = "\n" +
-            "id,app_name,app_version,domain_name,contact_email,image_url\n" +
+
             "1,Tresom,0.18,php.net,bboick0@bravesites.com,http://dummyimage.com/169x140.jpg/dddddd/000000\n" +
             "2,Cookley,0.86,cbslocal.com,jkobierra1@webs.com,http://dummyimage.com/131x216.bmp/cc0000/ffffff\n" +
             "3,Zoolab,3.09,economist.com,istiling2@wikipedia.org,http://dummyimage.com/241x129.jpg/5fa2dd/ffffff\n" +
@@ -257,7 +286,7 @@ public class AppRepository {
             "247,Overhold,6.84,histats.com,kturfus6u@nymag.com,http://dummyimage.com/189x155.png/ff4444/ffffff\n" +
             "248,Gembucket,4.0,narod.ru,ahenrion6v@nba.com,http://dummyimage.com/132x120.bmp/ff4444/ffffff\n" +
             "249,Vagram,6.2.2,moonfruit.com,ckennsley6w@who.int,http://dummyimage.com/210x145.png/cc0000/ffffff\n";
-    private final String APP_DATA_2 =
+    private static final String APP_DATA_2 =
             "250,Vagram,7.92,geocities.com,cchallin6x@princeton.edu,http://dummyimage.com/204x176.jpg/cc0000/ffffff\n" +
             "251,Matsoft,4.4,wired.com,csherrock6y@narod.ru,http://dummyimage.com/215x221.bmp/cc0000/ffffff\n" +
             "252,Hatity,0.5.8,webeden.co.uk,iyukhnevich6z@flickr.com,http://dummyimage.com/187x245.png/dddddd/000000\n" +
