@@ -7,8 +7,18 @@ public class AppRepository {
     private static ArrayList<AppListing> dataset;
 
 
+    public static ArrayList<AppListing> getAppListing(){
+        dataset = new ArrayList<>();
 
-    public ArrayList<AppListing> getAppListing(ArrayList<AppListing> dataModels, String dataString, boolean ignorefirstline){
+        parseAppListing(dataset, APP_DATA_1, true);
+        parseAppListing(dataset, APP_DATA_2, false);
+
+        return dataset;
+
+    }
+
+
+    private static void parseAppListing(ArrayList<AppListing> dataModels, String dataString, boolean ignorefirstline){
         final int startingLine = ignorefirstline ? 1 : 0;
 
         final String[] lines = dataString.split("\n");
@@ -28,7 +38,6 @@ public class AppRepository {
 
         }
 
-        return dataModels;
     }
 
 
