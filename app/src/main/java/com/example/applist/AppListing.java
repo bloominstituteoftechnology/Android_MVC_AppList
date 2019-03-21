@@ -2,25 +2,31 @@ package com.example.applist;
 
 public class AppListing {
     //id,app_name,app_version,domain_name,contact_email,image_url
-    private int listingId =0;
+    private String listingId ="";
     private String appVersion;
     private String domainName= "";
     private String contactEmail= "";
     private String imageURL="";
 
-    public AppListing(int listingId, String appVersion, String domainName, String contactEmail, String imageURL) {
-        this.listingId = listingId;
-        this.appVersion = appVersion;
-        this.domainName = domainName;
-        this.contactEmail = contactEmail;
-        this.imageURL = imageURL;
+    public String getAppName() {
+        return appName;
     }
 
-    public int getListingId() {
+    public void setAppName(String appName) {
+        this.appName = appName;
+    }
+
+    private String appName="";
+
+    public AppListing() {
+
+    }
+
+    public String getListingId() {
         return listingId;
     }
 
-    public void setListingId(int listingId) {
+    public void setListingId(String listingId) {
         this.listingId = listingId;
     }
 

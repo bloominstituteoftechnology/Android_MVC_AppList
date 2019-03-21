@@ -14,8 +14,23 @@ public class AppRepository {
 
         for(String s:appStrings) {
             String[] appChars = s.split(", ");
+
+            AppListing foobar = new AppListing();
+            foobar.setListingId(appChars[0]);
+            foobar.setDomainName(appChars[3]);
+            foobar.setAppVersion(appChars[2]);
+            foobar.setAppName(appChars[1]);
+            foobar.setContactEmail(appChars[4]);
+            foobar.setImageURL(appChars[5]);
+
+            rtn.add(foobar);
+
+            if(foobar.getListingId().equals("id")) {
+                rtn.remove(foobar);
+            }
         }
-        
+
+        return rtn;
     }
 
 
