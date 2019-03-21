@@ -12,7 +12,7 @@ public class AppRepository {
         public static ArrayList<AppListing> getAppListings(){
             dataSet = new ArrayList<>(500);
             ParseRawData(dataSet, APP_DATA_1);
-            //ParseRawData(dataSet, APP_DATA_2);
+            ParseRawData(dataSet, APP_DATA_2);
 
             return dataSet;
         }
