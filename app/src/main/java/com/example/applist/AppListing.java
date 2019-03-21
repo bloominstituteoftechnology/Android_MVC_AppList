@@ -8,6 +8,14 @@ public class AppListing {
     private String contactEmail= "";
     private String imageURL="";
 
+    public AppListing(int listingId, String appVersion, String domainName, String contactEmail, String imageURL) {
+        this.listingId = listingId;
+        this.appVersion = appVersion;
+        this.domainName = domainName;
+        this.contactEmail = contactEmail;
+        this.imageURL = imageURL;
+    }
+
     public int getListingId() {
         return listingId;
     }
