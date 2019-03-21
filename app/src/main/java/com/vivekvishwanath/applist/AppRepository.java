@@ -12,7 +12,7 @@ public class AppRepository {
         return appListings;
     }
 
-    private public static void parseAppData(ArrayList<AppListing> listings, String dataString) {
+    private static void parseAppData(ArrayList<AppListing> listings, String dataString) {
 
         String[] appStrings = dataString.split("\n");
         for (String appString : appStrings) {
