@@ -1,5 +1,7 @@
 package com.example.applist;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class AppRepository {
@@ -15,6 +17,7 @@ public class AppRepository {
 
         }
 
+        appListings.add(new AppListing(2, "test", "this is a test version", "domain" , "email" , "url"));
         return appListings;
 
     }
