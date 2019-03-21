@@ -1,6 +1,8 @@
 package com.vivekvishwanath.applist;
 
-public class AppListing {
+import java.io.Serializable;
+
+public class AppListing implements Serializable {
 
     private int id;
     private String appName, appVersion, domainName, contactEmail, imageUrl;
