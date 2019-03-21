@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
+
     private AppListing app;
     private TextView nameView;
     private TextView vView;
@@ -17,7 +18,9 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-    
+
+    nameView = findViewById(R.id.app_name);
+    nameView.setText(app.getAppName());
 
     }
 }
