@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class AppRepository {
 
-    private ArrayList<AppListing> appListings = new ArrayList<>();
+    private static ArrayList<AppListing> appListings = new ArrayList<>();
 
-    public ArrayList<AppListing> getAppListings() {
+    public static ArrayList<AppListing> getAppListings() {
         parseAppData(appListings, APP_DATA_1);
         parseAppData(appListings, APP_DATA_2);
         return appListings;
