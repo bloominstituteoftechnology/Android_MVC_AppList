@@ -20,7 +20,9 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<AppListing> appListings = AppRepository.getAppListings();
 
         appListView = findViewById(R.id.app_list_view);
-        
+        for(AppListing applisting : appListings) {
+            appListView.addView(createAppView(applisting));
+        }
     }
 
     public TextView createAppView(AppListing appListing) {
