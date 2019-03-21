@@ -1,6 +1,24 @@
 package com.example.applist;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class AppRepository {
+//"id,app_name,app_version,domain_name,contact_email,image_url
+
+    public static ArrayList<AppListing> getAppListings(){
+        ArrayList<AppListing> appListings = new ArrayList<>();
+     final String[] lines = APP_DATA.split("\n");
+     final String[][] dataValues = new String[lines.length][];
+     for (int i = 1; i <lines.length; ++i){
+         dataValues[i] = lines[i].split(",")
+     }
+
+
+
+
+     return appListings;
+    }
 
 
 
@@ -23,7 +41,13 @@ public class AppRepository {
 
 
 
-    private final String APP_DATA = "id,app_name,app_version,domain_name,contact_email,image_url\n" +
+
+
+
+
+
+
+    private final static  String APP_DATA = "id,app_name,app_version,domain_name,contact_email,image_url\n" +
             "1,Tresom,0.18,php.net,bboick0@bravesites.com,http://dummyimage.com/169x140.jpg/dddddd/000000\n" +
             "2,Cookley,0.86,cbslocal.com,jkobierra1@webs.com,http://dummyimage.com/131x216.bmp/cc0000/ffffff\n" +
             "3,Zoolab,3.09,economist.com,istiling2@wikipedia.org,http://dummyimage.com/241x129.jpg/5fa2dd/ffffff\n" +
