@@ -3,6 +3,8 @@ package com.example.applist;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -16,9 +18,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ArrayList<AppListing> listings = new ArrayList<>();
-        listings = getAppListings();
+        ArrayList<AppListing> appListings = new ArrayList<>();
+        appListings = getAppListings();
 
-        Log.i("Listing contents", listings.get(0).getApp_version());
+
+        for (AppListing listing : appListings){
+            TextView tv = new TextView(this);
+            LinearLayout linearLayout = findViewById(R.id.linear_layout_child);
+            tv.setText(listing.getApp_name());
+            tv.setTextSize(25);
+
+
+
+            linearLayout.addView(tv);
+        }
     }
 }

@@ -14,12 +14,12 @@ public class AppRepository {
         for (int i = 0; i < lines.length; ++i) {
 
             dataValues[i] = lines[i].split(",");
-
         }
 
         for (int i = 0;i < lines.length; ++i){
             appListings.add(new AppListing(Integer.parseInt(dataValues[i][0]),dataValues[i][1],dataValues[i][2],dataValues[i][3],dataValues[i][4],dataValues[i][5]));
         }
+
         return appListings;
 
     }
