@@ -11,7 +11,9 @@ public class AppRepository {
      final String[] lines = APP_DATA.split("\n");
      final String[][] dataValues = new String[lines.length][];
      for (int i = 1; i <lines.length; ++i){
-         dataValues[i] = lines[i].split(",")
+         dataValues[i] = lines[i].split(",");
+         appListings.add(new AppListing(Integer.parseInt(dataValues[i][0]),dataValues[i][1],dataValues[i][2], dataValues[i][3], dataValues[i][4], dataValues[i][5]));
+
      }
 
 
