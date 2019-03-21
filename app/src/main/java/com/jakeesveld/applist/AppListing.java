@@ -14,6 +14,9 @@ public class AppListing {
         this.imageURL = imageURL;
     }
 
+    public AppListing() {
+    }
+
     public int getId() {
         return id;
     }

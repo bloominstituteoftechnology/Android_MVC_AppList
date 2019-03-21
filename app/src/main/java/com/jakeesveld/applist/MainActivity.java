@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
     public TextView createTextView(final AppListing item){
         TextView view = new TextView(context);
-        view.setText(item.getAppName() + item.getAppVersion());
+        view.setText(item.getAppName() + " v" + item.getAppVersion());
         view.setTextSize(24);
         view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ViewerActivity.class);
-                intent.putExtra("image", item.getImageURL());
+                intent.putExtra("object", item.getId());
                 startActivity(intent);
             }
         });
