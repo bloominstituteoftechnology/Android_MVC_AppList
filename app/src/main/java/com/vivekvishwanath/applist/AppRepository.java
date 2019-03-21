@@ -4,10 +4,15 @@ import java.util.ArrayList;
 
 public class AppRepository {
 
-    ArrayList<AppListing> appListings = new ArrayList<>();
+    private ArrayList<AppListing> appListings = new ArrayList<>();
 
+    public ArrayList<AppListing> getAppListings() {
+        parseAppData(appListings, APP_DATA_1);
+        parseAppData(appListings, APP_DATA_2);
+        return appListings;
+    }
 
-    public static void parseAppData(String dataString) {
+    private public static void parseAppData(ArrayList<AppListing> listings, String dataString) {
 
         String[] appStrings = dataString.split("\n");
         for (String appString : appStrings) {
@@ -19,6 +24,7 @@ public class AppRepository {
             String contactEmail = appData[4];
             String imageUrl = appData[5];
             AppListing appListing = new AppListing(id, appName, appVersion, domainName, contactEmail, imageUrl);
+            listings.add(appListing);
         }
     }
 
