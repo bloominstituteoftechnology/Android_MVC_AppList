@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("LISTING_KEY", temp);
                     startActivity(intent);
 
-
                 }
             });
 
