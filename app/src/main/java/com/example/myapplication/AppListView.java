@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 public class AppListView extends AppCompatActivity {
 
     private ArrayList<AppListing> appListings;
+    private LinearLayout listLayout;
     Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        listLayout = findViewById(R.id.ll_scrollview);
 
         context = this;
 
@@ -26,12 +29,12 @@ public class AppListView extends AppCompatActivity {
 
         for(AppListing list: appListings){
             Log.i("test", "enchanced for loop");
-            generateTextView(list);
+            listLayout.addView(generateTextView(list));
         }
 
     }
 
-    public void generateTextView(final AppListing appListing) {
+    public TextView generateTextView(final AppListing appListing) {
         TextView tv = new TextView(context);
         tv.setText(appListing.getAppName());
         tv.setPadding(15, 5, 15, 5);
@@ -43,5 +46,7 @@ public class AppListView extends AppCompatActivity {
                 intent.putExtra("key", appListing.getImageURL());
                 startActivity(intent);
             }});
+
+        return tv;
     }
 }

@@ -19,7 +19,7 @@ public class AppRepository {
 
         private static void ParseRawData(ArrayList<AppListing> dataModels, String dataString){
             final String[] lines = dataString.split("\n");
-            final String[][] dataValues = new String[lines.length][];
+            final String[][] dataValues = new String[lines.length][6];
             for (int i = 1; i < lines.length; ++i){
                 dataValues[i] = lines[i-1].split(",");
                 dataModels.add(new AppListing(
