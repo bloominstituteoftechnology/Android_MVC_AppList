@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         context = this;
     }
 
- /*   private TextView createAppView(final AppListing appView) {
+    private TextView createAppView(final AppListing appView) {
         TextView view = new TextView(context);
         view.setText(appView.getAppName());
         view.setPadding(15, 15, 15, 15);
@@ -27,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //     Intent viewImageIntent = new Intent(context, );
+                Intent viewImageIntent = new Intent(context, DetailsActivity.class);
+                viewImageIntent.putExtra("key", appView);
+                startActivity(viewImageIntent);
             }
         });
 
-*/
+        return view;
     }
+}
 
 

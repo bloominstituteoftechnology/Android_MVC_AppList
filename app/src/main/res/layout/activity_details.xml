@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <TextView
         android:id="@+id/image_view"
         android:layout_width="328dp"
         android:layout_height="306dp"
@@ -23,7 +23,7 @@
         tools:layout_editor_absoluteY="419dp" />
 
     <TextView
-        android:id="@+id/app_verison"
+        android:id="@+id/app_version"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
         android:text="TextView"
