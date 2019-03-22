@@ -28,7 +28,6 @@ public class AppListView extends AppCompatActivity {
         appListings = AppRepository.getAppListings();
 
         for(AppListing list: appListings){
-            Log.i("test", "enchanced for loop");
             listLayout.addView(generateTextView(list));
         }
 

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 
 import java.io.Serializable;
 import java.net.URI;
+import java.net.URL;
 
 public class AppDetailsActivity extends AppCompatActivity implements Serializable {
 
@@ -23,8 +24,8 @@ public class AppDetailsActivity extends AppCompatActivity implements Serializabl
         Intent intent = getIntent();
         String imageURL = (String)intent.getSerializableExtra("key");
 
-        iv.setImageURI(Uri.parse(imageURL));
 
 
+        iv.setImageURI(Uri.parse(imageURL.toString()));
     }
 }
