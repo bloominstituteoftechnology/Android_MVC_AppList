@@ -1,21 +1,22 @@
 package com.example.applist;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AppRepository {
-
-    private static ArrayList<AppListingModel> appListingModel;
+public class AppRepository implements Serializable {
 
 
 
     public static ArrayList<AppListingModel> getAppListings(){
-       ArrayList<AppListingModel> arrayList = new ArrayList<>();
+       ArrayList<AppListingModel> arrayList = new ArrayList<>(500);
         parseRawData(arrayList, APP_DATA_1);
         parseRawData(arrayList, APP_DATA_2);
 
 
         return arrayList;
     }
+
+
 
     private static void parseRawData(ArrayList<AppListingModel> arrayList, String dataString) {
         final String[] appString = APP_DATA_1.split("\n");
