@@ -1,11 +1,11 @@
 package com.example.applist;
 
-public class AppListModel {
+public class AppListingModel {
 
     private int id;
     private String appName,appVersion,domainName,contactEmail,imageUrl;
 
-    public AppListModel(int id, String appName, String appVersion, String domainName, String contactEmail, String imageUrl) {
+    public AppListingModel(int id, String appName, String appVersion, String domainName, String contactEmail, String imageUrl) {
         this.id = id;
         this.appName = appName;
         this.appVersion = appVersion;
@@ -14,7 +14,7 @@ public class AppListModel {
         this.imageUrl = imageUrl;
     }
 
-    public AppListModel(int id) {
+    public AppListingModel(int id) {
         this.id = id;
     }
 
