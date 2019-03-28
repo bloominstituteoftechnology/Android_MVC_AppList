@@ -4,8 +4,15 @@ import java.util.ArrayList;
 
 public class AppRepository {
 
+    private static ArrayList<AppListingModel> appListingModel;
 
-    private static void getApplistings(ArrayList<AppListingModel> dataModel, String dataString){
+/*    private static void getApplist(){
+        appListingModel = new ArrayList<>(500);
+        parseRawData(appListingModel,APP_DATA_1);
+        parseRawData(appListingModel,APP_DATA_2);
+    }*/
+
+   /* private static void parseRawData(ArrayList<AppListingModel> dataModel, String dataString){
         String[] lines = dataString.split("\n");
         String cleanLine;
         for (int i = 0; i < lines.length; i++){
@@ -22,7 +29,27 @@ public class AppRepository {
         }
 
 
-    }
+    }*/
+
+    static ArrayList<AppListingModel> getAppListings(){
+       ArrayList<AppListingModel> arrayList = new ArrayList<>();
+       final String[] appString = APP_DATA_1.split("\n");
+       final String[][] dataValues = new String[appString.length][];
+       for (int i = 0; i < appString.length; ++i){
+           dataValues[i] = appString[i].split(",");
+           arrayList.add(
+                   new AppListingModel(Integer.parseInt(dataValues[i][0]),
+                           dataValues[i][1],
+                           dataValues[i][2],
+                           dataValues[i][3],
+                           dataValues[i][4],
+                           dataValues[i][5])
+           );
+       }
+
+
+       return arrayList;
+   }
 
 
 
