@@ -66,4 +66,11 @@ public class AppListing {
     public void setImage_url(Uri image_url) {
         this.image_url = image_url;
     }
+
+    @Override
+    public String toString() {
+        return String.format("ID: %d\nApp Name: %s\nApp Version: %s\nDomain Name: %s\nContact Email: %s\nImage Url: %s",
+                id, app_name, app_version, domain_name, contact_email, image_url);
+              //id,app_name,app_version,domain_name,contact_email,image_url
+    }
 }
