@@ -6,30 +6,7 @@ public class AppRepository {
 
     private static ArrayList<AppListingModel> appListingModel;
 
-/*    private static void getApplist(){
-        appListingModel = new ArrayList<>(500);
-        parseRawData(appListingModel,APP_DATA_1);
-        parseRawData(appListingModel,APP_DATA_2);
-    }*/
 
-   /* private static void parseRawData(ArrayList<AppListingModel> dataModel, String dataString){
-        String[] lines = dataString.split("\n");
-        String cleanLine;
-        for (int i = 0; i < lines.length; i++){
-            cleanLine = lines[i].replace("\"", "");
-            String[] splitLine = cleanLine.split(",");
-            dataModel.add(
-                    new AppListingModel(Integer.parseInt(splitLine[0]),
-                            splitLine[1],
-                            splitLine[2],
-                            splitLine[3],
-                            splitLine[4],
-                            splitLine[5])
-            );
-        }
-
-
-    }*/
 
     public static ArrayList<AppListingModel> getAppListings(){
        ArrayList<AppListingModel> arrayList = new ArrayList<>();
