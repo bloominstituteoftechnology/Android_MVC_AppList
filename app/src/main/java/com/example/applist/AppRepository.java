@@ -1,6 +1,28 @@
 package com.example.applist;
 
+import java.util.ArrayList;
+
 public class AppRepository {
+
+
+    private static void getApplistings(ArrayList<AppListingModel> dataModel, String dataString){
+        String[] lines = dataString.split("\n");
+        String cleanLine;
+        for (int i = 0; i < lines.length; i++){
+            cleanLine = lines[i].replace("\"", "");
+            String[] splitLine = cleanLine.split(",");
+            dataModel.add(
+                    new AppListingModel(Integer.parseInt(splitLine[0]),
+                            splitLine[1],
+                            splitLine[2],
+                            splitLine[3],
+                            splitLine[4],
+                            splitLine[5])
+            );
+        }
+
+
+    }
 
 
 
