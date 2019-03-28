@@ -3,7 +3,7 @@ package com.example.applist;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class AppRepository implements Serializable {
+public class AppRepository  {
 
 
 

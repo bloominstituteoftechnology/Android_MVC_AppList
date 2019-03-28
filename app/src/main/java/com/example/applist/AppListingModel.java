@@ -1,6 +1,8 @@
 package com.example.applist;
 
-public class AppListingModel {
+import java.io.Serializable;
+
+public class AppListingModel implements Serializable {
 
     private int id;
     private String appName,appVersion,domainName,contactEmail,imageUrl;
