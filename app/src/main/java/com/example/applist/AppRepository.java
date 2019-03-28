@@ -31,26 +31,31 @@ public class AppRepository {
 
     }*/
 
-    static ArrayList<AppListingModel> getAppListings(){
+    public static ArrayList<AppListingModel> getAppListings(){
        ArrayList<AppListingModel> arrayList = new ArrayList<>();
-       final String[] appString = APP_DATA_1.split("\n");
-       final String[][] dataValues = new String[appString.length][];
-       for (int i = 0; i < appString.length; ++i){
-           dataValues[i] = appString[i].split(",");
-           arrayList.add(
-                   new AppListingModel(Integer.parseInt(dataValues[i][0]),
-                           dataValues[i][1],
-                           dataValues[i][2],
-                           dataValues[i][3],
-                           dataValues[i][4],
-                           dataValues[i][5])
-           );
-       }
+        parseRawData(arrayList, APP_DATA_1);
+        parseRawData(arrayList, APP_DATA_2);
 
 
-       return arrayList;
-   }
+        return arrayList;
+    }
 
+    private static void parseRawData(ArrayList<AppListingModel> arrayList, String dataString) {
+        final String[] appString = APP_DATA_1.split("\n");
+        final String[][] dataValues = new String[appString.length][];
+        for (int i = 0; i < appString.length; ++i){
+            dataValues[i] = appString[i].split(",");
+            arrayList.add(
+                    new AppListingModel(Integer.parseInt(dataValues[i][0]),
+                            dataValues[i][1],
+                            dataValues[i][2],
+                            dataValues[i][3],
+                            dataValues[i][4],
+                            dataValues[i][5])
+            );
+        }
+
+    }
 
 
     static final String APP_DATA_1 = "1,Tresom,0.18,php.net,bboick0@bravesites.com,http://dummyimage.com/169x140.jpg/dddddd/000000\n" +
