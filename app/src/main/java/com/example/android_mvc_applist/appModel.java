@@ -12,4 +12,24 @@ public class appModel
         this.contact_email = contact_email;
         this.image_url = image_url;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getApp_version() {
+        return app_version;
+    }
+
+    public String getDomain_name() {
+        return domain_name;
+    }
+
+    public String getContact_email() {
+        return contact_email;
+    }
+
+    public String getImage_url() {
+        return image_url;
+    }
 }

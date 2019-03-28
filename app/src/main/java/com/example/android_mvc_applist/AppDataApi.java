@@ -4,6 +4,26 @@ import java.util.ArrayList;
 
 public class AppDataApi
 {
+    static  ArrayList<appModel> appModels;
+
+    public static  ArrayList<appModel> getAllApps()
+    {
+        populateData();
+    return appModels;
+    }
+
+    public static ArrayList<appModel> SearchApps(String partial)
+    {
+        ArrayList<appModel> results = new ArrayList<>();
+        for (appModel app: appModels)
+        {
+            if (app.getApp_version().toLowerCase().contains(partial.toLowerCase())){
+                results.add(app);
+            }
+        }
+        return results;
+    }
+
     private static void parseRawData(ArrayList<appModel> dataModels, String dataString)
     {
         String[] lines = dataString.split("\n");
@@ -17,6 +37,13 @@ public class AppDataApi
                     splitLine[3],
                     splitLine[4]));
         }
+
+    }
+
+    private static void populateData(){
+        appModels = new ArrayList<>(500);
+        parseRawData(appModels, RAW_DATA_1);
+        parseRawData(appModels, RAW_DATA_2);
 
     }
 
