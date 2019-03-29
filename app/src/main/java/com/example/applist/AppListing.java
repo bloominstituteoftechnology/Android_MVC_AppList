@@ -10,7 +10,7 @@ public class AppListing {
     private String app_name, domain_name, contact_email;
     private Uri image_url;
 
-    public AppListing(int id, int app_version, String app_name, String domain_name, String contact_email, Uri image_url) {
+    public AppListing(int id) {
         this.id = id;
         this.app_version = app_version;
         this.app_name = app_name;
